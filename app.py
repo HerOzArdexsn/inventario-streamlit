@@ -193,7 +193,6 @@ st.caption("ID Similar • Imagen • Descripción • Unidad • Cantidad • U
 
 # Auto-refresh
 if refresh_secs > 0:
-    st.experimental_rerun  # hint
     st.autorefresh(interval=refresh_secs * 1000, key="auto_refresh")
 
 # --- Cargar datos ---
