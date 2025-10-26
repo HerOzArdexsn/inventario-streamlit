@@ -191,14 +191,14 @@ if st.sidebar.button("🔄 Forzar recarga ahora"):
 st.title("📦 Inventario en tiempo real")
 st.caption("ID Similar • Imagen • Descripción • Unidad • Cantidad • Ubicación Física")
 
-# Auto-refresh
+# --- Auto-refresh ---
 if refresh_secs > 0:
     # Usa el componente oficial `streamlit-autorefresh` si está disponible
-try:
-    from streamlit_autorefresh import st_autorefresh
-    st_autorefresh(interval=refresh_secs * 1000, key="auto_refresh")
-except Exception:
-    st.caption("Autorefresh no disponible: instala 'streamlit-autorefresh' o ajusta el slider a 0.")
+    try:
+        from streamlit_autorefresh import st_autorefresh
+        st_autorefresh(interval=refresh_secs * 1000, key="auto_refresh")
+    except Exception:
+        st.caption("Autorefresh no disponible: instala 'streamlit-autorefresh' o ajusta el slider a 0.")
 
 # --- Cargar datos ---
 df = load_data().copy()
